@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import BookPage from "./components/BookPage.vue";
+import BooksSearchPage from "./components/BooksSearchPage.vue";
 
 export const router = createRouter({
   history: createWebHistory(),
@@ -9,6 +10,11 @@ export const router = createRouter({
       name: "book",
       component: BookPage,
       props: true
+    },
+    {
+      path: "/books",
+      name: "books",
+      component: BooksSearchPage,
     }
   ]
 });
