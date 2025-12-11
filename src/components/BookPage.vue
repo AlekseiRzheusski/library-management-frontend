@@ -35,9 +35,11 @@ onMounted(async () => {
     <p>Title: {{ book.title }}</p>
     <p>ISBN: {{ book.isbn }}</p>
     <p>Description: {{ book.description }}</p>
-    <p>Author ID: {{ book.authorId.toString() }}</p>
-    <p>Author full name: {{ book.authorName }}</p>
-    <p>Category ID: {{ book.categoryId.toString() }}</p>
+    <p>Author full name:
+      <router-link :to="`/author/${book.authorId}`">
+        {{ book.authorName }}
+      </router-link>
+      </p>
     <p>Category Name: {{ book.categoryName }}</p>
     <p>Published Date: {{ book.publishedDate }}</p>
     <p>Page Count: {{ book.pageCount }}</p>

@@ -115,7 +115,11 @@ const handlePrevClick = async () => {
                             {{ book.title }}
                         </router-link>
                     </td>
-                    <td>{{ book.authorName }}</td>
+                    <td>
+                        <router-link :to="`/author/${book.authorId}`">
+                            {{ book.authorName }}
+                        </router-link>
+                    </td>
                     <td>{{ book.categoryName }}</td>
                     <td>{{ book.publishedDate }}</td>
                     <td>{{ book.pageCount }}</td>
