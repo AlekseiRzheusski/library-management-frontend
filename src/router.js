@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import BookPage from "./components/BookPage.vue";
 import BooksSearchPage from "./components/BooksSearchPage.vue";
 import AuthorPage from "./components/AuthorPage.vue";
+import Login from "./components/Auth/Login.vue";
 
 export const router = createRouter({
   history: createWebHistory(),
@@ -23,5 +24,10 @@ export const router = createRouter({
       component: AuthorPage,
       props: true
     },
+    {
+      path: "/login",
+      name: "login",
+      component: Login
+    }
   ]
 });
