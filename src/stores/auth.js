@@ -1,10 +1,9 @@
 import { defineStore } from "pinia";
 
-//TODO: use local storage somehow
 export const useAuthStore = defineStore('auth',
     {
         state: () => ({
-            accessToken: null,
+            accessToken: localStorage.getItem('accessToken')
         }),
         getters: {
             isAuthenticated: state => !!state.accessToken,
@@ -19,9 +18,11 @@ export const useAuthStore = defineStore('auth',
         actions: {
             setAccessToken(token) {
                 this.accessToken = token;
+                localStorage.setItem("accessToken", token);
             },
             logout() {
                 this.accessToken = null;
+                localStorage.removeItem("accessToken");
             }
         }
     }
