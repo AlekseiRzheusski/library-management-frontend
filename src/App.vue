@@ -8,15 +8,6 @@ import { useRouter } from 'vue-router';
 const auth = useAuthStore();
 const router = useRouter();
 
-onMounted(async () => {
-  try {
-    const res = await api.post('/auth/refresh');
-    auth.setAccessToken(res.data.accessToken);
-  } catch {
-    auth.logout();
-  }
-});
-
 const handleLogout = async () => {
   try {
     await logout()
