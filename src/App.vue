@@ -29,7 +29,13 @@ const handleLogin = async () => {
       <router-link :to="`/books`">
         Books List 
       </router-link>
-    <p v-if="auth.isAuthenticated">Hi {{ auth.userName }}
+    <p v-if="auth.isAuthenticated">
+      <span>
+        Hi 
+        <router-link :to="`/user-borrowings`">
+          {{ auth.userName }} 
+        </router-link>
+      </span> 
       <button @click="handleLogout">logout</button>
     </p>
     <p v-else>
