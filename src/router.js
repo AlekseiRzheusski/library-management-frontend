@@ -3,6 +3,7 @@ import BookPage from "./components/BookPage.vue";
 import BooksSearchPage from "./components/BooksSearchPage.vue";
 import AuthorPage from "./components/AuthorPage.vue";
 import Login from "./components/Auth/Login.vue";
+import UserBorrowingsPage from "./components/UserBorrowingsPage.vue";
 
 export const router = createRouter({
   history: createWebHistory(),
@@ -17,6 +18,11 @@ export const router = createRouter({
       path: "/books",
       name: "books",
       component: BooksSearchPage,
+    },
+    {
+      path: "/user-borrowings",
+      name: "user-borrowings",
+      component: UserBorrowingsPage,
     },
     {
       path: "/author/:id",
