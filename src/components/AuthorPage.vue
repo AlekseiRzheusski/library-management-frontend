@@ -20,7 +20,6 @@ onMounted(async () => {
     error.value = null;
   } 
   catch (err) {
-    console.error(err);
     error.value = err.message;
     author.value = null;
   }
@@ -28,11 +27,11 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div v-if="error" style="color:red">{{ error }}</div>
+  <div v-if="error" id="error" style="color:red">{{ error }}</div>
 
   <div v-else-if="author">
     <p>ID: {{ author.authorId.toString() }}</p>
-    <p>Name: {{ author.firstName }} {{ author.LastName }}</p>
+    <p>Name: {{ author.firstName }} {{ author.lastName }}</p>
     <p>Biography: {{ author.biography }}</p>
     <p>Date of birth: {{ author.dateOfBirth }}</p>
     <p>Book Count: {{ author.bookCount }}</p>
