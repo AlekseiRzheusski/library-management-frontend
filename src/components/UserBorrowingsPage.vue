@@ -21,6 +21,7 @@ var showRightButton = ref(false);
 
 async function loadPage() {
     try {
+        error.value = null;
         const res = await getUserBorrowings(
             {
                 status: status.value,

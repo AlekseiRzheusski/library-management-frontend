@@ -128,8 +128,8 @@ const handlePrevClick = async () => {
             </tbody>
         </table>
         <br></br>
-        <button v-if="showLeftButton" @click="handlePrevClick">Prev</button>
-        <button v-if="showRightButton" @click="handleNextClick">Next</button>
+        <button v-if="showLeftButton" id="btn-prev" @click="handlePrevClick">Prev</button>
+        <button v-if="showRightButton" id="btn-next" @click="handleNextClick">Next</button>
     </template>
 
 

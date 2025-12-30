@@ -11,7 +11,7 @@ const router = createRouter({
 
 describe('AuthorPage.vue', () => {
     it('shows author data', async () => {
-        vi.spyOn(authorService, 'getAuthor').mockResolvedValue({
+        const spy = vi.spyOn(authorService, 'getAuthor').mockResolvedValue({
             authorId: 5n,
             firstName: "Anton",
             lastName: "Chekhov",
@@ -27,6 +27,7 @@ describe('AuthorPage.vue', () => {
         const wrapper = mount(AuthorPage, { global: { plugins: [router], }, });
 
         await new Promise(resolve => setTimeout(resolve));
+        expect(spy).toBeCalled();
         expect(wrapper.text()).toContain('Anton Chekhov');
         expect(wrapper.text()).toContain('Is not active');
     });
